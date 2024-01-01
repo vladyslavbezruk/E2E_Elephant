@@ -1,0 +1,95 @@
+<html lang="en" class="hydrated"><head>
+    <meta charset="utf-8"><style data-styles="">ion-icon{visibility:hidden}.hydrated{visibility:inherit}</style>
+    <meta name="csrf-token" content="$csrf">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Kuzikov Borys">
+    <title>Elephant</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Permanent+Marker">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/dashboard.css" rel="stylesheet">
+    <script src="/js/chart.min.js"></script>
+    <script src="/js/jquery.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+<header class="navbar  sticky-top flex-md-nowrap px-5 ">
+    <a class="logotype logotype-font navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">
+        <img src="/images/logo-bw.png" alt="logo">
+        Elephant
+    </a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+<div class="d-inline">
+        <span class="text-nowrap">
+            <a href="/profile">
+               <ion-icon name="person-outline" role="img" class="md hydrated" aria-label="person outline"></ion-icon>
+                valid.email10335@example.com
+            </a>
+        </span>
+        <a class="btn px-3 text-nowrap" href="/logout">Logout</a>
+</div></header>
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="position-sticky pt-5">
+<ul class="nav flex-column fs-5">
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/">
+            <ion-icon name="file-tray-stacked-outline" role="img" class="md hydrated" aria-label="file tray stacked outline"></ion-icon>
+            Dashboard
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/profile">
+            <ion-icon name="file-tray-stacked-outline" role="img" class="md hydrated" aria-label="file tray stacked outline"></ion-icon>
+            Profile
+        </a>
+    </li>
+</ul>
+            </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">
+                            <a href="/home"><ion-icon name="home-outline" role="img" class="md hydrated" aria-label="home outline"></ion-icon></a>
+                    </h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group me-2">
+                        </div>
+                    </div>
+                </div>
+            <div class="jumbotron jumbotron-fluid ">
+    <div class="container shadow border p-5">
+        <h1 class="display-4">Hi, newcomer!</h1>
+        <p class="lead">Check your mail and push mail-verification link - to be able create new database.</p>
+        <a class="btn btn-primary btn-lg" href="/registration/resend-confirm" role="button">Resend mail</a>
+    </div>
+</div><div class="container pt-5">
+    <div class="card-list">
+        <div class="card-list-head">
+            <h3>Databases</h3>
+        </div>
+        <div class="card-list-body card-task">
+
+                <p>Currently you have no one database</p>
+        </div>
+    </div>
+        You need to approve you email before can create new DB
+        <button class="w-100 btn disabled" type="submit">Create new database</button>
+
+
+        </div></main>
+    </div>
+</div>
+
+
+<script src="/js/bootstrap.bundle.min.js"></script>
+
+
+</body></html>
