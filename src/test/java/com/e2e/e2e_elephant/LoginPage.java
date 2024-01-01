@@ -15,4 +15,6 @@ public class LoginPage {
     public SelenideElement linkPassShowHide = $("#pass-show-hide");
 
     public SelenideElement buttonSign = $("button[class^='w-100']");
+
+    public SelenideElement divUserPasswordNotKnown = $("div[class*='fade']");
 }
