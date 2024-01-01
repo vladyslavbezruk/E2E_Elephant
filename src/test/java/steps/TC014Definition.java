@@ -48,7 +48,7 @@ public class TC014Definition {
     }
     @Then("З’являється повідомлення 'Please fill out the form once again'.")
     public void з_являється_повідомлення_Please_fill_out_the_form_once_again() {
-        Assertions.assertEquals(webdriver().driver().getCurrentFrameUrl(), "http://localhost:7000/registration");
+        Assertions.assertEquals(webdriver().driver().getCurrentFrameUrl(), "http://127.0.0.1:7000/registration");
 
         screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
     }

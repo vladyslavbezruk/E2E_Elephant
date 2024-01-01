@@ -41,7 +41,7 @@ public class TC013Definition {
     public void перейти_на_сторінку_де_відображається_кнопка_send_again() {
         String filePath = "C:\\ProjectElephant\\messages.txt";
 
-        open("http://localhost:7000/registration");
+        open("http://127.0.0.1:7000/registration");
 
         registrationPage.inputEmail.setValue(email);
 

@@ -36,7 +36,7 @@ public class TC008Definition {
 
     @Given("Перейти на сторінку реєстрації.")
     public void перейти_на_сторінку_реєстрації() {
-        open("http://localhost:7000/registration");
+        open("http://127.0.0.1:7000/registration");
 
         screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
     }
@@ -73,7 +73,7 @@ public class TC008Definition {
     }
     @Then("Подання не дозволяється. З'являється повідомлення про помилку, що формат 'Email' недійсний.")
     public void подання_не_дозволяється_з_являється_повідомлення_про_помилку_що_формат_email_недійсний() {
-        Assertions.assertNotEquals(webdriver().driver().getCurrentFrameUrl(), "http://localhost:7000/home");
+        Assertions.assertNotEquals(webdriver().driver().getCurrentFrameUrl(), "http://127.0.0.1:7000/home");
 
         screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
     }
@@ -95,7 +95,7 @@ public class TC008Definition {
         if (registrationPage.divOrgExceptionErrorExecute.text().equals("org.sql2o.Sql2oException: Error in executeUpdate, ПОМИЛКА: повторювані значення ключа порушують обмеження унікальності \"users_login_key\" Detail: Ключ (login)=(valid.email@example.com) вже існує.")) {
             return;
         } else {
-            Assertions.assertEquals(webdriver().driver().getCurrentFrameUrl(), "http://localhost:7000/home");
+            Assertions.assertEquals(webdriver().driver().getCurrentFrameUrl(), "http://127.0.0.1:7000/home");
         }
     }
 }

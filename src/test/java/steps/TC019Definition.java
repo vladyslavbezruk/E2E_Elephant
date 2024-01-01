@@ -43,7 +43,7 @@ public class TC019Definition {
     public void успішний_вхід_в_систему_переадресація_на_домашню_сторінку() {
         Assertions.assertEquals(webdriver().driver().getCurrentFrameUrl(), "http://127.0.0.1:7000/home");
 
-        if (webdriver().driver().getCurrentFrameUrl().equals("http://localhost:7000/home")) {
+        if (webdriver().driver().getCurrentFrameUrl().equals("http://127.0.0.1:7000/home")) {
             homePage.linkLogout.click();
         }
 

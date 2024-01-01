@@ -97,7 +97,7 @@ public class TC009Definition {
         if (registrationPage.divOrgExceptionErrorExecute.text().equals("org.sql2o.Sql2oException: Error in executeUpdate, ПОМИЛКА: повторювані значення ключа порушують обмеження унікальності \"users_login_key\" Detail: Ключ (login)=(valid.email@example.com) вже існує.")) {
             return;
         } else {
-            Assertions.assertEquals(webdriver().driver().getCurrentFrameUrl(), "http://localhost:7000/home");
+            Assertions.assertEquals(webdriver().driver().getCurrentFrameUrl(), "http://127.0.0.1:7000/home");
         }
     }
 }
