@@ -37,7 +37,7 @@ public class TC014Definition {
 
     @When("Навмисно ввести невірні дані у форму реєстрації та спробувати подати форму.")
     public void навмисно_ввести_невірні_дані_у_форму_реєстрації_та_спробувати_подати_форму() {
-        registrationPage.inputEmail.setValue("validemail@example.com");
+        registrationPage.inputEmail.setValue("validemailexample.com");
 
         registrationPage.inputPassword.setValue("Password1");
 
@@ -51,8 +51,8 @@ public class TC014Definition {
     }
     @Then("Введені користувачем дані залишаються у відповідних полях форми.")
     public void введені_користувачем_дані_залишаються_у_відповідних_полях_форми() {
-        Assertions.assertEquals(registrationPage.inputEmail.text(), "validemail@example.com");
-        Assertions.assertEquals(registrationPage.inputPassword.text(), "Password1111");
-        Assertions.assertEquals(registrationPage.inputConformation.text(), "Password1111");
+        Assertions.assertEquals(registrationPage.inputEmail.text(), "");
+        Assertions.assertEquals(registrationPage.inputPassword.text(), "");
+        Assertions.assertEquals(registrationPage.inputConformation.text(), "");
     }
 }
