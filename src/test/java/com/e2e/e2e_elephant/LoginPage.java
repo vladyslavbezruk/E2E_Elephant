@@ -17,4 +17,6 @@ public class LoginPage {
     public SelenideElement buttonSign = $("button[class^='w-100']");
 
     public SelenideElement divUserPasswordNotKnown = $("div[class*='fade']");
+
+    public SelenideElement linkForgotPassword = $("html > body > main > div:nth-of-type(1) > div > div:nth-of-type(2) > form > p > a");
 }
