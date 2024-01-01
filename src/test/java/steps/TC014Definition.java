@@ -54,9 +54,9 @@ public class TC014Definition {
     }
     @Then("Введені користувачем дані залишаються у відповідних полях форми.")
     public void введені_користувачем_дані_залишаються_у_відповідних_полях_форми() {
-        Assertions.assertEquals(registrationPage.inputEmail.text(), "");
-        Assertions.assertEquals(registrationPage.inputPassword.text(), "");
-        Assertions.assertEquals(registrationPage.inputConformation.text(), "");
+        Assertions.assertEquals(registrationPage.inputEmail.getValue(), "validemailexample.com");
+        Assertions.assertEquals(registrationPage.inputPassword.getValue(), "Password1");
+        Assertions.assertEquals(registrationPage.inputConformation.getValue(), "Password1");
 
         screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
     }

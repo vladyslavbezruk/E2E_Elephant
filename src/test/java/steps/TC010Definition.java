@@ -37,7 +37,6 @@ public class TC010Definition {
 
     @Then("Текст у полі 'password' прихований відображається як зірочки або крапки.")
     public void текст_у_полі_password_прихований_відображається_як_зірочки_або_крапки() {
-        Assertions.assertNotEquals(registrationPage.inputPassword.text(), "Password1!");
         Assertions.assertEquals(registrationPage.inputPassword.getAttribute("type"), "password");
 
         screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));

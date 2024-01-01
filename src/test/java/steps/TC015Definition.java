@@ -41,8 +41,8 @@ public class TC015Definition {
         screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
     }
 
-    @Then("З’являється повідомлення {string}.")
-    public void з_являється_повідомлення(String string) {
+    @Then("З’являється повідомлення 'The user with such email address has been already registered. Please fill out another email address'.")
+    public void з_являється_повідомлення_The_user_with_such_email_address_has_been_already_registered_Please_fill_out_another_email_address() {
         Assertions.assertEquals(registrationPage.divOrgExceptionErrorExecute.text(),"org.sql2o.Sql2oException: Error in executeUpdate, ПОМИЛКА: повторювані значення ключа порушують обмеження унікальності \"users_login_key\" Detail: Ключ (login)=(valid.email@example.com) вже існує.");
 
         screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
