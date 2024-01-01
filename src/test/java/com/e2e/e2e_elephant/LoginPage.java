@@ -13,4 +13,6 @@ public class LoginPage {
     public SelenideElement inputFloatingPassword = $("input[aria-label='Password']");
 
     public SelenideElement linkPassShowHide = $("#pass-show-hide");
+
+    public SelenideElement buttonSign = $("button[class^='w-100']");
 }
