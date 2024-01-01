@@ -13,6 +13,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.io.*;
 import java.util.Random;
 
+import static com.codeborne.selenide.Selenide.screenshot;
 import static com.codeborne.selenide.Selenide.webdriver;
 
 public class TC012Definition {
@@ -42,6 +43,8 @@ public class TC012Definition {
         registrationPage.inputConformation.setValue("Password1!");
 
         registrationPage.buttonSign.click();
+
+        screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
     }
 
     @Then("Користувач перенаправляється на домашню сторінку протягом '5' секунд.")

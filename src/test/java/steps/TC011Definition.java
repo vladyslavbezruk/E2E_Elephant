@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import static com.codeborne.selenide.Selenide.screenshot;
 import static com.codeborne.selenide.Selenide.webdriver;
 
 public class TC011Definition {
@@ -34,6 +35,8 @@ public class TC011Definition {
         registrationPage.inputPassword.setValue("Password1!");
 
         registrationPage.buttonSign.click();
+
+        screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
     }
 
     @Then("Подання не дозволяється. З'являється повідомлення про помилку, що поле 'confirm password' є обов'язковим.")

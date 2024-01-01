@@ -17,8 +17,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Random;
 
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.webdriver;
+import static com.codeborne.selenide.Selenide.*;
 
 public class TC014Definition {
     com.e2e.e2e_elephant.RegistrationPage registrationPage = new com.e2e.e2e_elephant.RegistrationPage();
@@ -44,15 +43,21 @@ public class TC014Definition {
         registrationPage.inputConformation.setValue("Password1");
 
         registrationPage.buttonSign.click();
+
+        screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
     }
     @Then("З’являється повідомлення 'Please fill out the form once again'.")
     public void з_являється_повідомлення_Please_fill_out_the_form_once_again() {
         Assertions.assertEquals(webdriver().driver().getCurrentFrameUrl(), "http://localhost:7000/registration");
+
+        screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
     }
     @Then("Введені користувачем дані залишаються у відповідних полях форми.")
     public void введені_користувачем_дані_залишаються_у_відповідних_полях_форми() {
         Assertions.assertEquals(registrationPage.inputEmail.text(), "");
         Assertions.assertEquals(registrationPage.inputPassword.text(), "");
         Assertions.assertEquals(registrationPage.inputConformation.text(), "");
+
+        screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
     }
 }

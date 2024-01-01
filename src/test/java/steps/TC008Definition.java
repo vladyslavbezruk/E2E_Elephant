@@ -1,6 +1,7 @@
 package steps;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.junit5.ScreenShooterExtension;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -9,6 +10,8 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.api.extension.RegisterExtension;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -34,6 +37,8 @@ public class TC008Definition {
     @Given("Перейти на сторінку реєстрації.")
     public void перейти_на_сторінку_реєстрації() {
         open("http://localhost:7000/registration");
+
+        screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
     }
 
     @When("Залишити поле 'Email' порожнім і спробувати подати форму.")
@@ -43,11 +48,15 @@ public class TC008Definition {
         registrationPage.inputConformation.setValue("Password1!");
 
         registrationPage.buttonSign.click();
+
+        screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
     }
 
     @Then("Подання не дозволяється. З'являється повідомлення про помилку, що поле 'Email' є обов'язковим.")
     public void подання_не_дозволяється_з_являється_повідомлення_про_помилку_що_поле_email_є_обов_язковим() {
         Assertions.assertEquals(registrationPage.divLoginValidMail.text(), "login Is it a valid mail?");
+
+        screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
     }
 
     @When("Ввести 'invalidEmail' без 'a' та '.' у поле 'Email' і спробувати подати форму.")
@@ -59,10 +68,14 @@ public class TC008Definition {
         registrationPage.inputConformation.setValue("Password1!");
 
         registrationPage.buttonSign.click();
+
+        screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
     }
     @Then("Подання не дозволяється. З'являється повідомлення про помилку, що формат 'Email' недійсний.")
     public void подання_не_дозволяється_з_являється_повідомлення_про_помилку_що_формат_email_недійсний() {
         Assertions.assertNotEquals(webdriver().driver().getCurrentFrameUrl(), "http://localhost:7000/home");
+
+        screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
     }
 
     @When("Ввести 'valid_emailaexample_com' у поле 'Email' і спробувати подати форму.")
@@ -75,6 +88,7 @@ public class TC008Definition {
 
         registrationPage.buttonSign.click();
 
+        screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
     }
     @Then("Якщо інші поля валідні, подання успішне. Повідомлення про помилку, пов'язане з полем 'Email', не з'являється.")
     public void якщо_інші_поля_валідні_подання_успішне_повідомлення_про_помилку_пов_язане_з_полем_email_не_з_являється() {

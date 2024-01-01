@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.util.Random;
 
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.screenshot;
 
 public class TC013Definition {
     Random rnd = new Random();
@@ -53,11 +54,15 @@ public class TC013Definition {
         File myObj = new File(filePath);
 
         myObj.delete();
+
+        screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
     }
 
     @When("Клікнути на кнопку 'send again'.")
     public void клікнути_на_кнопку_send_again() {
         homePage.linkResendMail.click();
+
+        screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
     }
 
     @Then("Користувач отримує новий 'email' для активації акаунту.")

@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import static com.codeborne.selenide.Selenide.screenshot;
 import static com.codeborne.selenide.Selenide.webdriver;
 
 public class TC010Definition {
@@ -30,21 +31,29 @@ public class TC010Definition {
     @When("Ввести 'password' у поле 'password'.")
     public void ввести_password_у_поле_password() {
         registrationPage.inputPassword.setValue("Password1!");
+
+        screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
     }
 
     @Then("Текст у полі 'password' прихований відображається як зірочки або крапки.")
     public void текст_у_полі_password_прихований_відображається_як_зірочки_або_крапки() {
         Assertions.assertNotEquals(registrationPage.inputPassword.text(), "Password1!");
         Assertions.assertEquals(registrationPage.inputPassword.getAttribute("type"), "password");
+
+        screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
     }
 
     @When("Клікнути на елемент 'unmask' поряд із полем 'password'.")
     public void клікнути_на_елемент_unmask_поряд_із_полем_password() {
         registrationPage.linkPassShowHide.click();
+
+        screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
     }
 
     @Then("Текст у полі 'password' стає видимим.")
     public void текст_у_полі_password_стає_видимим() {
         Assertions.assertEquals(registrationPage.inputPassword.getAttribute("type"), "text");
+
+        screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
     }
 }
