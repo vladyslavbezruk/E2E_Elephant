@@ -15,4 +15,12 @@ public class HomePage {
     public SelenideElement pCheckYourMailAnd = $("p[class='lead']");
 
     public SelenideElement linkProfile = $("a[class='nav-link']");
+
+    public SelenideElement span = $("html > body > div > div > main > div:nth-of-type(2) > div > div:nth-of-type(1) > div > div > div:nth-of-type(1) > h2 > span:nth-of-type(1)");
+
+    public SelenideElement span2 = $("html > body > div > div > main > div:nth-of-type(2) > div > div:nth-of-type(2) > div > div > div:nth-of-type(1) > h2 > span:nth-of-type(1)");
+
+    public SelenideElement smallUsedFromTotalSpace = $("html > body > div > div > main > div:nth-of-type(2) > div > div:nth-of-type(1) > div > div > div:nth-of-type(1) > small");
+
+    public SelenideElement smallCreatedFromYourPlan = $("html > body > div > div > main > div:nth-of-type(2) > div > div:nth-of-type(2) > div > div > div:nth-of-type(1) > small");
 }
