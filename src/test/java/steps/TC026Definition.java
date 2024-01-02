@@ -12,12 +12,11 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.screenshot;
+import static com.codeborne.selenide.Selenide.*;
 
 public class TC026Definition {
     com.e2e.e2e_elephant.LoginPage loginPage = new com.e2e.e2e_elephant.LoginPage();
-    ResetPasswordPage resetPasswordPage = new ResetPasswordPage();
+    com.e2e.e2e_elephant.HomePage homePage = new com.e2e.e2e_elephant.HomePage();
     ResetPasswordPageToken resetPasswordPageToken = new ResetPasswordPageToken();
 
     @BeforeAll
@@ -62,6 +61,12 @@ public class TC026Definition {
 
     @Then("Отримати помилку про невдалий вхід.")
     public void c() {
-        Assertions.assertEquals(loginPage.divUserPasswordNotKnown.text(), "User or password not known");
+        if (webdriver().driver().getCurrentFrameUrl().equals("http://127.0.0.1:7000/home")) {
+            homePage.linkLogout.click();
+
+            throw new AssertionError("Відбувся вхід, помилки не було");
+        } else {
+            Assertions.assertEquals(loginPage.divUserPasswordNotKnown.text(), "User or password not known");
+        }
     }
 }
