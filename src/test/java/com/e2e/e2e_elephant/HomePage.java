@@ -11,4 +11,6 @@ public class HomePage {
     public SelenideElement linkResendMail = $("a[class*='btn-primary']");
 
     public SelenideElement linkLogout = $("a[class$='text-nowrap']");
+
+    public SelenideElement pCheckYourMailAnd = $("p[class='lead']");
 }

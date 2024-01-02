@@ -2,6 +2,7 @@ package steps;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import com.e2e.e2e_elephant.LoginPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -21,6 +22,7 @@ public class TC012Definition {
     String email = "valid.email" + rnd.nextInt(99999) + "@example.com";
     com.e2e.e2e_elephant.RegistrationPage registrationPage = new com.e2e.e2e_elephant.RegistrationPage();
     com.e2e.e2e_elephant.HomePage homePage = new com.e2e.e2e_elephant.HomePage();
+    com.e2e.e2e_elephant.LoginPage loginPage = new LoginPage();
 
     @BeforeAll
     public static void setUpAll() {
@@ -43,6 +45,19 @@ public class TC012Definition {
         registrationPage.inputConformation.setValue("Password1!");
 
         registrationPage.buttonSign.click();
+
+        screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
+    }
+
+    @When("Увійдіть в систему, використовуючи свій обліковий запис.")
+    public void a() {
+        loginPage.inputFloating.setValue(email);
+
+        loginPage.inputFloatingPassword.setValue("Password1!");
+
+        screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
+
+        loginPage.buttonSign.click();
 
         screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
     }
