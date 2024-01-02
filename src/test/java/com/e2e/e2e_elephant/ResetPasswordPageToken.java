@@ -14,4 +14,5 @@ public class ResetPasswordPageToken {
 
     public SelenideElement buttonChangePassword = $("button[class='btn']");
 
+    public SelenideElement divPasswordNotFoundValidation = $("div[class*='fade']");
 }
