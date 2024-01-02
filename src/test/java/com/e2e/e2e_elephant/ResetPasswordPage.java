@@ -12,4 +12,6 @@ public class ResetPasswordPage {
 
     public SelenideElement buttonSendLinkForPassword = $("button[class='btn']");
 
+    public SelenideElement divUserPasswordNotKnown = $("div[class*='fade']");
+
 }
