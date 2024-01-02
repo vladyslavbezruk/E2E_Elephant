@@ -13,4 +13,6 @@ public class HomePage {
     public SelenideElement linkLogout = $("a[class$='text-nowrap']");
 
     public SelenideElement pCheckYourMailAnd = $("p[class='lead']");
+
+    public SelenideElement linkProfile = $("a[class='nav-link']");
 }

@@ -20,7 +20,7 @@ public class TC017Definition {
 
     @BeforeAll
     public static void setUpAll() {
-        Configuration.browserSize = "1280x800";
+        Configuration.browserSize = "1800x1000";
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
