@@ -11,4 +11,6 @@ public class ProfilePage {
     public SelenideElement buttonOutlinePrimary = $("html > body > div > div > main > div:nth-of-type(5) > div > div:nth-of-type(1) > form > div > div:nth-of-type(2) > button");
 
     public SelenideElement buttonOutlinePrimary2 = $("html > body > div > div > main > div:nth-of-type(5) > div > div:nth-of-type(2) > form > div > div:nth-of-type(2) > button");
+
+    public SelenideElement linkUkraine = $("html > body > div > div > main > div:nth-of-type(2) > a:nth-of-type(2)");
 }
