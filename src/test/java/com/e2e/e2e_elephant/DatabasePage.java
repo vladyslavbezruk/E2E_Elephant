@@ -10,4 +10,5 @@ import static com.codeborne.selenide.Selenide.*;
 public class DatabasePage {
     public SelenideElement ioniconHomeOutline = $("ion-icon[aria-label^='home']");
 
+    public SelenideElement link = $("html > body > div > div > main > div:nth-of-type(2) > h1 > a:nth-of-type(2)");
 }

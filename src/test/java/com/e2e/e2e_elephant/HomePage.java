@@ -33,4 +33,8 @@ public class HomePage {
     public SelenideElement button = $("button[class='btn']");
 
     public SelenideElement buttonCreateNewDatabase = $("button[class^='w-100']");
+
+    public SelenideElement divDatabaseHasBeenDropped = $("div[class$='show']");
+
+    public SelenideElement button2 = $("form[action='/database/qbrmiquyqp/delete'] button");
 }
