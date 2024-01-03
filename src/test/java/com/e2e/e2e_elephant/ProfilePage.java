@@ -15,4 +15,8 @@ public class ProfilePage {
     public SelenideElement labelPublicApiKey = $("label[for='public-api']");
 
     public SelenideElement labelPrivateApiKey = $("label[for='private-api']");
+
+    public SelenideElement buttonGenerate = $("html > body > div > div > main > div:nth-of-type(3) > form > div:nth-of-type(2) > button");
+
+    public SelenideElement divApiKeysWasReset = $("div[class*='fade']");
 }
