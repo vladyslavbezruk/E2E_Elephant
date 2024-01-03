@@ -25,4 +25,18 @@ public class ProfilePage {
     public SelenideElement labelUsername = $("label[for='db-username']");
 
     public SelenideElement labelPassword = $("label[for='db-password']");
+
+    public SelenideElement linkUkraine = $("html > body > div > div > main > div:nth-of-type(2) > a:nth-of-type(2)");
+
+    public SelenideElement h3UserPreset = $("html > body > div > div > main > div:nth-of-type(2) > h3");
+
+    public SelenideElement divUserPresetYourPrefered = $("html > body > div > div > main > div:nth-of-type(2)");
+
+    public SelenideElement linkEnglish = $("html > body > div > div > main > div:nth-of-type(2) > a:nth-of-type(1)");
+
+    public SelenideElement linkUkraine2 = $("html > body > div > div > main > div:nth-of-type(2) > a:nth-of-type(2)");
+
+    public SelenideElement h3ApiKeys = $("html > body > div > div > main > div:nth-of-type(3) > h3");
+
+    public SelenideElement buttonChangePassword = $("html > body > div > div > main > div:nth-of-type(4) > form > div:nth-of-type(2) > button");
 }

@@ -36,5 +36,21 @@ public class HomePage {
 
     public SelenideElement divDatabaseHasBeenDropped = $("div[class$='show']");
 
-    public SelenideElement button2 = $("form[action='/database/qbrmiquyqp/delete'] button");
+    public SelenideElement linkTextNowrap = $("a[class$='text-nowrap']");
+
+    public SelenideElement linkActive = $("a[aria-current='page']");
+
+    public SelenideElement link = $("a[class='nav-link']");
+
+    public SelenideElement spanTotalSpace = $("html > body > div > div > main > div:nth-of-type(2) > div > div:nth-of-type(1) > div > div > div:nth-of-type(1) > span");
+
+    public SelenideElement spanBases = $("html > body > div > div > main > div:nth-of-type(2) > div > div:nth-of-type(2) > div > div > div:nth-of-type(1) > span");
+
+    public SelenideElement smallUsedFromTotalSpace2 = $("html > body > div > div > main > div:nth-of-type(2) > div > div:nth-of-type(1) > div > div > div:nth-of-type(1) > small");
+
+    public SelenideElement smallCreatedFromYourPlan2 = $("html > body > div > div > main > div:nth-of-type(2) > div > div:nth-of-type(2) > div > div > div:nth-of-type(1) > small");
+
+    public SelenideElement h3 = $("h3");
+
+    public SelenideElement button2 = $("button[class^='w-100']");
 }
