@@ -35,14 +35,13 @@ public class TC097_2Definition {
 
     @Then("Вибирати мову українську на сторінці профіля.")
     public void a() {
-//        open("http://localhost:7000/profile");
         homePage.linkProfile.click();
         profilePage.linkUkraine.click();
 
         screenshot("screenshots/" + this.getClass().getSimpleName() + "/" + java.time.LocalDateTime.now().toString().replace(":", "-"));
     }
 
-    @When("Текст та інформація на сторінці профіля повинні бути відображені на українській мові.")
+    @When("Текст та інформація на головній повинні бути відображені на українській мові.")
     public void b() {
         open("http://localhost:7000");
         Assertions.assertEquals(homePage.linkTextNowrap.getText(), "Вийти");
