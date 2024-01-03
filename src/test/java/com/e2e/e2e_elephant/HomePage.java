@@ -31,4 +31,5 @@ public class HomePage {
     public SelenideElement divUserPassword = $("div[aria-labelledby='jdbc-bxmivcytpu']");
 
     public SelenideElement button = $("button[class='btn']");
+    
 }
