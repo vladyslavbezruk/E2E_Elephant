@@ -23,4 +23,12 @@ public class HomePage {
     public SelenideElement smallUsedFromTotalSpace = $("html > body > div > div > main > div:nth-of-type(2) > div > div:nth-of-type(1) > div > div > div:nth-of-type(1) > small");
 
     public SelenideElement smallCreatedFromYourPlan = $("html > body > div > div > main > div:nth-of-type(2) > div > div:nth-of-type(2) > div > div > div:nth-of-type(1) > small");
+
+    public SelenideElement h3Databases = $("h3");
+
+    public SelenideElement h6 = $("h6");
+
+    public SelenideElement divUserPassword = $("div[aria-labelledby='jdbc-bxmivcytpu']");
+
+    public SelenideElement button = $("button[class='btn']");
 }
