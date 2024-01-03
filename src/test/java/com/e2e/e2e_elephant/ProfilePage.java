@@ -19,4 +19,10 @@ public class ProfilePage {
     public SelenideElement buttonGenerate = $("html > body > div > div > main > div:nth-of-type(3) > form > div:nth-of-type(2) > button");
 
     public SelenideElement divApiKeysWasReset = $("div[class*='fade']");
+
+    public SelenideElement h3DatabaseUser = $("html > body > div > div > main > div:nth-of-type(4) > h3");
+
+    public SelenideElement labelUsername = $("label[for='db-username']");
+
+    public SelenideElement labelPassword = $("label[for='db-password']");
 }
